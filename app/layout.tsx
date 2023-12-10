@@ -19,7 +19,9 @@ export default function RootLayout({
             lang="en"
             className="w-screen h-screen"
         >
-            <body className={quicksand.className}>{children}</body>
+            <body className={`bg-primary text-black ${quicksand.className}`}>
+                {children}
+            </body>
         </html>
     );
 }
