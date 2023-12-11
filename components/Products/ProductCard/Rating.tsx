@@ -1,5 +1,7 @@
 import { RatingType } from "@/types/types";
-import { FaRegStar, FaStar, FaStarHalf } from "react-icons/fa";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
+
 const Rating = ({ rating }: { rating: RatingType }) => {
     const fullStars = Math.floor(rating.rate);
     const hasHalfStar = rating.rate % 1 !== 0;
@@ -13,7 +15,7 @@ const Rating = ({ rating }: { rating: RatingType }) => {
                         className="text-accent"
                     />
                 ))}
-                {hasHalfStar && <FaStarHalf className="text-accent" />}
+                {hasHalfStar && <FaRegStarHalfStroke className="text-accent" />}
                 {[...Array(5 - fullStars - (hasHalfStar ? 1 : 0))].map(
                     (_, index) => (
                         <FaRegStar
