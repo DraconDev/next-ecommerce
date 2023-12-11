@@ -1,5 +1,5 @@
 type Props = {};
-import { FaSearch } from "react-icons/fa";
+import { IoIosSearch } from "react-icons/io";
 
 const SearchField = (props: Props) => {
     return (
@@ -9,7 +9,7 @@ const SearchField = (props: Props) => {
                 placeholder="Search"
             ></input>
             <button className="p-1 px-2  rounded-l-none rounded-lg bg-accent">
-                <FaSearch className="w-6 h-6 text-black" />
+                <IoIosSearch className="w-7 h-7 text-black" />
             </button>
         </div>
     );
