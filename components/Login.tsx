@@ -1,10 +1,10 @@
 type Props = {};
-import { CgProfile } from "react-icons/cg";
+import { RiAccountCircleLine } from "react-icons/ri";
 
 const Login = (props: Props) => {
     return (
-        <div className="flex items-center  text-lg text-accent">
-            <CgProfile className="w-9 h-9" />
+        <div className="flex items-center  text-lg ">
+            <RiAccountCircleLine className="w-10 h-10" />
         </div>
     );
 };
