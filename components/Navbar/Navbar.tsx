@@ -8,9 +8,9 @@ import NavbarSecondRow from "./SecondRow/NavbarSecondRow";
 
 const Navbar = (props: Props) => {
     return (
-        <div className="fixed top-0 left-0 text-primary bg-secondary w-full md:text-3xl flex flex-col">
-            <div className="flex justify-between p-2 ">
-                <SiTurbosquid className="w-8 h-8" />
+        <div className="z-20 fixed top-0 left-0 text-primary bg-secondary w-full md:text-3xl flex flex-col justify-center items-center">
+            <div className="w-full flex p-2 px-3 items-center max-w-6xl gap-3">
+                <SiTurbosquid className="w-12 h-12" />
                 <SearchField />
                 <div className="flex gap-2">
                     <Login />
