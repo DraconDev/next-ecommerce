@@ -1,6 +1,7 @@
 "use client";
 import MyContext from "@/state/context";
 import { useContext } from "react";
+import CategoryButton from "./CategoryButton";
 
 type Props = {};
 
@@ -9,12 +10,10 @@ const CategoryList = (props: Props) => {
     return (
         <div className="flex w-full gap-3 items-center">
             {state.categories.map((category) => (
-                <button
+                <CategoryButton
                     key={category}
-                    className="p-1"
-                >
-                    {category}
-                </button>
+                    category={category}
+                />
             ))}
         </div>
     );

@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard/ProductCard";
 type Props = {};
 
 const Products = (props: Props) => {
-    let { data } = useSWR<ProductType[]>(
+    const { data } = useSWR<ProductType[]>(
         "https://fakestoreapi.com/products",
         () =>
             fetch("https://fakestoreapi.com/products").then((res) => res.json())

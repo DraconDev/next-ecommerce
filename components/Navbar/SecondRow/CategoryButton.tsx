@@ -1,15 +1,22 @@
 "use client";
-import { ProductType } from "@/types/types";
-import useSWR from "swr";
 
 const CategoryButton = ({ category }: { category: string }) => {
-    let { data } = useSWR<ProductType[]>(
-        "https://fakestoreapi.com/products",
-        () =>
-            fetch("https://fakestoreapi.com/products").then((res) => res.json())
-    );
+    // const { data } = useSWR<ProductType[]>(
+    //     `https://fakestoreapi.com/products/category/${category}`,
+    //     () =>
+    //         fetch("https://fakestoreapi.com/products")
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 console.log(data);
+    //                 // Filter the data based on the category
+    //                 const filteredData = data.filter(
+    //                     (product: ProductType) => product.category === category
+    //                 );
+    //                 return filteredData;
+    //             })
+    // );
 
-    return <div>CategoryButton</div>;
+    return <button onClick={() => console.log("")}>{category}</button>;
 };
 
 export default CategoryButton;
