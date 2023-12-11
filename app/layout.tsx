@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className="w-screen h-screen"
+            className="w-screen h-screen overflow-x-hidden"
         >
             <body className={`bg-quaternary text-black ${quicksand.className}`}>
                 <Navbar />
