@@ -1,10 +1,10 @@
 type Props = {};
-import { RiAccountCircleLine } from "react-icons/ri";
+import { VscAccount } from "react-icons/vsc";
 
 const Login = (props: Props) => {
     return (
-        <div className="flex items-center  text-lg ">
-            <RiAccountCircleLine className="w-10 h-10" />
+        <div className="flex items-center  text-lg p-1">
+            <VscAccount className="w-9 h-9" />
         </div>
     );
 };
