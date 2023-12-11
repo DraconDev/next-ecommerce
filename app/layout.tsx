@@ -18,9 +18,11 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className="w-screen h-screen overflow-x-hidden"
+            className=""
         >
-            <body className={`bg-quaternary text-black ${quicksand.className}`}>
+            <body
+                className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-[98vh] `}
+            >
                 <Navbar />
                 <div className="pt-[100px]"></div>
                 {children}
