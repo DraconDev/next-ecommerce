@@ -1,12 +1,13 @@
 "use client";
-import { Product } from "@/types/types";
+
+import { ProductType } from "@/types/types";
 import useSWR from "swr";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard/ProductCard";
 
 type Props = {};
 
 const Products = (props: Props) => {
-    const { data } = useSWR<Product[]>(
+    const { data } = useSWR<ProductType[]>(
         "https://fakestoreapi.com/products",
         () =>
             fetch("https://fakestoreapi.com/products").then((res) => res.json())
