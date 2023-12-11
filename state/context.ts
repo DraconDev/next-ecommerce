@@ -1,10 +1,13 @@
 import { ProductType } from "@/types/types";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 type ContextType = {
     categories: string[];
     currentItems: ProductType[];
+    setCurrentItems: React.Dispatch<React.SetStateAction<ProductType[]>>;
 };
+
+const [currentItems, setCurrentItems] = useState<ProductType[]>([]);
 
 const context: ContextType = {
     categories: [
@@ -15,6 +18,7 @@ const context: ContextType = {
         "Women's clothing",
     ],
     currentItems: [],
+    setCurrentItems: (data) => {},
 };
 
 const state = {
