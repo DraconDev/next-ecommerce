@@ -4,7 +4,7 @@ import Rating from "./Rating";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
     return (
-        <div className="flex flex-col w-[255px] h-[600px] items-center justify-between text-center p-1 flex-shrink-0 grow">
+        <div className="flex flex-col w-[255px] h-[620px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl">
             <div className="flex items-center h-3/5">
                 <Image
                     src={product.image}
