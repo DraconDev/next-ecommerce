@@ -1,6 +1,12 @@
+import { ProductType } from "@/types/types";
 import { createContext } from "react";
 
-const context = {
+type ContextType = {
+    categories: string[];
+    currentItems: ProductType[];
+};
+
+const context: ContextType = {
     categories: [
         "All",
         "Electronics",
@@ -8,6 +14,7 @@ const context = {
         "Men's clothing",
         "Women's clothing",
     ],
+    currentItems: [],
 };
 
 const state = {
