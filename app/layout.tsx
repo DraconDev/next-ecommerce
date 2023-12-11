@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar";
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
@@ -20,6 +21,7 @@ export default function RootLayout({
             className="w-screen h-screen"
         >
             <body className={`bg-primary text-black ${quicksand.className}`}>
+                <Navbar />
                 {children}
             </body>
         </html>
