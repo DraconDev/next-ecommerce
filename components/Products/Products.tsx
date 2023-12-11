@@ -13,15 +13,16 @@ const Products = (props: Props) => {
             fetch("https://fakestoreapi.com/products").then((res) => res.json())
     );
     return (
-        <div className=" w-full ">
-            <div className="">testing</div>
-            {JSON.stringify({ data })}
-            {data?.map((product) => (
-                <ProductCard
-                    key={product.id}
-                    product={product}
-                />
-            ))}
+        <div className="w-full p-3">
+            {/* {JSON.stringify({ data })} */}
+            <div className="flex flex-wrap gap-4 justify-center">
+                {data?.map((product) => (
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
