@@ -1,8 +1,8 @@
 type Props = {};
 
 import { SiTurbosquid } from "react-icons/si";
-import Basket from "../Basket";
-import Login from "../Login";
+import Basket from "./Basket";
+import Login from "./Login";
 import SearchField from "./SearchField";
 import NavbarSecondRow from "./SecondRow/NavbarSecondRow";
 
