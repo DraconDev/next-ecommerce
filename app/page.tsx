@@ -1,9 +1,10 @@
-import Products from "@/components/Products";
+import Intro from "@/components/Products/Intro";
+import Products from "@/components/Products/Products";
 
 export default function Home() {
     return (
         <main className="flex w-full h-full  items-center justify-center  ">
-            <div className="max-w-6xl w-full h-full ">
+            <div className="max-w-6xl w-full h-full bg-primary text-black">
                 <Intro />
                 <Products />
             </div>
