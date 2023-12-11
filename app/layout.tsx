@@ -20,7 +20,7 @@ export default function RootLayout({
             lang="en"
             className="w-screen h-screen"
         >
-            <body className={`bg-primary text-black ${quicksand.className}`}>
+            <body className={`bg-quaternary text-black ${quicksand.className}`}>
                 <Navbar />
                 {children}
             </body>
