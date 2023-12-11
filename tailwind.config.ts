@@ -19,6 +19,7 @@ const config: Config = {
                 tertiary: "#232F3E",
                 quaternary: "#E3E6E6",
                 accent: "#FF9900",
+                accent2: "#1BA1FF",
             },
         },
     },
