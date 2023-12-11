@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 const SearchField = (props: Props) => {
     return (
-        <div className="text-xl  w-full flex  border-2 border-accent rounded-xl flex grow">
+        <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow">
             <input
                 className=" grow rounded-lg rounded-r-none w-full p-1 px-2"
                 placeholder="Search"

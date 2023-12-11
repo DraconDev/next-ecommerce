@@ -18,6 +18,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                     : product.description}
             </p>
             <Rating rating={product.rating} />
+            <p className="font-bold text-xl">{`$${product.price}`}</p>
         </div>
     );
 };
