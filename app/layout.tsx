@@ -22,6 +22,7 @@ export default function RootLayout({
         >
             <body className={`bg-quaternary text-black ${quicksand.className}`}>
                 <Navbar />
+                <div className="pt-[92px]"></div>
                 {children}
             </body>
         </html>

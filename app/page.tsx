@@ -2,8 +2,11 @@ import Products from "@/components/Products";
 
 export default function Home() {
     return (
-        <main className="flex w-full h-full flex-col items-center justify-center max-w-5xl">
-            <Products />
+        <main className="flex w-full h-full  items-center justify-center  ">
+            <div className="max-w-6xl w-full h-full ">
+                <div className="w-full ">asdasd</div>
+                <Products />
+            </div>
         </main>
     );
 }
