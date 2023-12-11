@@ -1,6 +1,6 @@
-type Props = {};
+import { Product } from "@/types/types";
 
-const ProductCard = (props: Props) => {
+const ProductCard = ({ product }: { product: Product }) => {
     return <div>ProductCard</div>;
 };
 
