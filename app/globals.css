@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* bg gradint */
+/* make variable */
+
+:root {
+    /* --blue: #1e90ff;
+    --white: #ffffff; */
+    --tw-gradient-stops: var(--tw-gradient-from),
+    --tw-gradient-from-position: 90%;
+    --tw-gradient-to-position: 100%;
+}
+
+/* .bg-gradient-fade-bottom {
+    background: linear-gradient(transparent 90%, #000 100%);
+} */
