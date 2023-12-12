@@ -6,7 +6,7 @@ const Intro = () => {
     return (
         <div
             className={
-                "max-w-6xl w-full h-full  text-black flex  items-center flex-col"
+                "max-w-6xl w-full   text-black flex  items-center flex-col"
             }
         >
             <ImageCarousel images={images} />
