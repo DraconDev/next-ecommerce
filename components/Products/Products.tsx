@@ -7,10 +7,9 @@ import ProductCard from "./ProductCard/ProductCard";
 type Props = {};
 
 const Products = (props: Props) => {
-    const { data } = useQuery(productsQuery({ searchTerm: "Electronics" }));
+    const { data } = useQuery(productsQuery({ searchTerm: "all" }));
     return (
         <div className="w-full p-3">
-            {/* {JSON.stringify({ data })} */}
             <div className="flex flex-wrap gap-4 justify-center">
                 {data?.map((product) => (
                     <ProductCard
