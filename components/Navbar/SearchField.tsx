@@ -16,7 +16,6 @@ const SearchField = (props: Props) => {
 
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
-        // queryClient.invalidateQueries({ queryKey: ["products"] });
         queryClient.fetchQuery(
             productQuery({
                 searchTerm: searchField,
@@ -80,7 +79,7 @@ const SearchField = (props: Props) => {
             </button>
 
             <input
-                className=" grow  w-full p-1 px-2"
+                className=" grow  w-full p-1 px-2 outline-none"
                 placeholder="Search"
                 value={searchField}
                 onChange={(e) => setSearchField(e.target.value)}
