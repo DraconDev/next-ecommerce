@@ -9,7 +9,8 @@ const SearchField = (props: Props) => {
     const queryClient = useQueryClient();
     const [searchField, setSearchField] = useState("");
     const fetchProducts = () => {
-        queryClient.fetchQuery(productsQuery({ searchTerm: "cloth" }));
+        if (searchField.length <= 2) return;
+        queryClient.fetchQuery(productsQuery({ searchTerm: searchField }));
     };
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
@@ -19,7 +20,10 @@ const SearchField = (props: Props) => {
                 value={searchField}
                 onChange={(e) => setSearchField(e.target.value)}
             ></input>
-            <button className="p-1 px-2  rounded-l-none rounded-lg bg-accent">
+            <button
+                className="p-1 px-2  rounded-l-none rounded-lg bg-accent"
+                onClick={fetchProducts}
+            >
                 <IoIosSearch className="w-7 h-7 text-black" />
             </button>
         </div>
