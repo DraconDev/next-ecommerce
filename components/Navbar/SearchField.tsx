@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import { productsQuery } from "../ReactQuery/Queries";
+import DropdownOption from "./DropdownOption";
 
 const SearchField = (props: Props) => {
     const queryClient = useQueryClient();
@@ -37,22 +38,16 @@ const SearchField = (props: Props) => {
                 <div className="relative">
                     {dropMenuState && (
                         <div className="bg-primary text-black rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-accent">
-                            <button
-                                className=" p-1 "
-                                onClick={() => {
-                                    setSearchSetting("titles");
-                                }}
-                            >
-                                Titles
-                            </button>
-                            <button
-                                className=" p-1 "
-                                onClick={() => {
-                                    setSearchSetting("categories");
-                                }}
-                            >
-                                Categories
-                            </button>
+                            <DropdownOption
+                                option="titles"
+                                setSearchSetting={setSearchSetting}
+                                searchSetting={searchSetting}
+                            />
+                            <DropdownOption
+                                option="categories"
+                                setSearchSetting={setSearchSetting}
+                                searchSetting={searchSetting}
+                            />
                         </div>
                     )}
                 </div>
