@@ -10,6 +10,7 @@ const SearchField = (props: Props) => {
     const queryClient = useQueryClient();
     const [searchField, setSearchField] = useState("");
     const [dropMenuState, setDropMenuState] = useState(false);
+    const [searchSetting, setSearchSetting] = useState("titles");
 
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
@@ -23,15 +24,35 @@ const SearchField = (props: Props) => {
     };
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
-            <button className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none ">
+            <button
+                className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none "
+                onClick={() => setDropMenuState(!dropMenuState)}
+            >
                 <FaAnglesDown className="w-5 h-5" />
                 <div className="relative">
-                    <div className="bg-primary text-black rounded-lg  flex flex-col absolute top-3 right-0">
-                        <div className=" ">Titles</div>
-                        {/* <div className=" p-1">Categories</div> */}
-                    </div>
+                    {dropMenuState && (
+                        <div className="bg-primary text-black rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-accent">
+                            <button
+                                className=" p-1 "
+                                onClick={() => {
+                                    setSearchSetting("titles");
+                                }}
+                            >
+                                Titles
+                            </button>
+                            <button
+                                className=" p-1 "
+                                onClick={() => {
+                                    setSearchSetting("categories");
+                                }}
+                            >
+                                Categories
+                            </button>
+                        </div>
+                    )}
                 </div>
             </button>
+
             <input
                 className=" grow  w-full p-1 px-2"
                 placeholder="Search"
