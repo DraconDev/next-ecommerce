@@ -19,6 +19,7 @@ export function productQuery({
                 fetch("https://fakestoreapi.com/products").then(
                     (res) => res.json() as Promise<ProductType[]>
                 ),
+            // .then((data) => {}),
             // staleTime: 5 * 1000,
         });
     }
@@ -59,4 +60,26 @@ export function productQuery({
         },
         // staleTime: 5 * 1000,
     });
+}
+
+export function bestSellers() {
+    return queryOptions({
+        queryKey: ["products"],
+        queryFn: () => {
+            return fetch("https://fakestoreapi.com/products")
+                .then((res) => res.json() as Promise<ProductType[]>)
+                .then((data) => {
+                    const sortedData = sortByProperty(data, "rating");
+
+                    return sortedData;
+                });
+        },
+    });
+}
+
+function sortByProperty(
+    arr: ProductType[],
+    prop: keyof ProductType
+): ProductType[] {
+    return arr.sort((a, b) => a.rating.count - b.rating.count);
 }
