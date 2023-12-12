@@ -13,7 +13,7 @@ const Products = (props: Props) => {
     //         fetch("https://fakestoreapi.com/products").then((res) => res.json())
     // );
 
-    const { data } = useQuery(productsQuery());
+    const { data } = useQuery(productsQuery({ searchTerm: "Electronics" }));
     return (
         <div className="w-full p-3">
             {/* {JSON.stringify({ data })} */}

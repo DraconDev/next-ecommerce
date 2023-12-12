@@ -1,3 +1,4 @@
+"use client";
 import Intro from "@/components/Products/Intro";
 import Products from "@/components/Products/Products";
 
