@@ -16,7 +16,7 @@ const SearchField = (props: Props) => {
 
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
-        queryClient.invalidateQueries({ queryKey: ["products"] });
+        // queryClient.invalidateQueries({ queryKey: ["products"] });
         queryClient.fetchQuery(
             productQuery({
                 searchTerm: searchField,
