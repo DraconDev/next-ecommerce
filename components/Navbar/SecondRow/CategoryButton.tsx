@@ -7,6 +7,7 @@ const CategoryButton = ({ category }: { category: string }) => {
     const queryClient = useQueryClient();
 
     const fetchProducts = () => {
+        queryClient.invalidateQueries({ queryKey: ["products"] });
         queryClient.fetchQuery(productQuery({ searchTerm: category }));
     };
 
