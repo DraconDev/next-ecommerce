@@ -1,6 +1,7 @@
 "use client";
-import Intro from "@/components/Products/Intro";
+
 import Products from "@/components/Products/Products";
+import Intro from "@/components/intro/Intro";
 
 export default function Home() {
     return (

@@ -1,3 +1,5 @@
+// components/ImageCarousel.js
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const ImageCarousel = ({ images }: { images: string[] }) => {
@@ -20,57 +22,36 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
     }, []);
 
     return (
-        <div
-            className="relative w-full"
-            data-carousel="slide"
-        >
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                {images.map((url: string, index: number) => (
-                    <div
-                        key={index}
-                        className={`${
-                            index === currentIndex ? "" : "hidden"
-                        } duration-700 ease-in-out`}
-                        data-carousel-item
-                    >
-                        <img
-                            src={url}
-                            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt={`Slide ${index + 1}`}
-                        />
-                    </div>
-                ))}
-            </div>
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                {images.map((_, index) => (
-                    <button
-                        key={index}
-                        type="button"
-                        className={`w-3 h-3 rounded-full ${
-                            index === currentIndex ? "bg-white" : "bg-white/30"
-                        }`}
-                        aria-current={index === currentIndex}
-                        aria-label={`Slide ${index + 1}`}
-                        data-carousel-slide-to={index}
-                        onClick={() => setCurrentIndex(index)}
+        <div className="relative w-full h-32 overflow-hidden">
+            {images.map((image, index) => (
+                <div
+                    key={index}
+                    className={`${
+                        index === currentIndex ? "" : "hidden"
+                    } duration-700 ease-in-out absolute top-0 left-0 w-full h-full`}
+                >
+                    <Image
+                        src={`${image}`} // Adjust the path based on your folder structure
+                        className="object-cover w-full h-full"
+                        alt={`Slide ${index + 1}`}
+                        width={1920}
+                        height={1080}
                     />
-                ))}
-            </div>
+                </div>
+            ))}
             <button
                 type="button"
-                className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev
+                className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-black text-white rounded-r-full opacity-50 hover:opacity-75"
                 onClick={prevSlide}
             >
-                {/* Previous button content */}
+                {"<"}
             </button>
             <button
                 type="button"
-                className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next
+                className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-black text-white rounded-l-full opacity-50 hover:opacity-75"
                 onClick={nextSlide}
             >
-                {/* Next button content */}
+                {">"}
             </button>
         </div>
     );
