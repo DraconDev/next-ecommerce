@@ -18,8 +18,8 @@ export function productsQuery({ searchTerm = "" }: { searchTerm: string }) {
     return queryOptions({
         queryKey: ["products"],
         queryFn: () => {
-            if (searchTermLower === "jewelery") {
-                searchTermLower = "jewelry";
+            if (searchTermLower === "jewelry") {
+                searchTermLower = "jewelery";
             }
 
             return fetch("https://fakestoreapi.com/products")
