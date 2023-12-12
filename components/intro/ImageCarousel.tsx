@@ -32,6 +32,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
                             index === currentIndex ? "opacity-100" : "opacity-0"
                         } duration-700 ease-in-out absolute top-0 left-0 w-full h-full`}
                     >
+                        <div className="absolute w-full h-[15%] bottom-0 bg-gradient-to-t from-quaternary to-transparent"></div>
                         <Image
                             src={`/carousel/${image}`} // Adjust the path based on your folder structure
                             className="object-cover w-full h-full"
