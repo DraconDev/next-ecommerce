@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar/Navbar";
+import QueryProvider from "@/components/ReactQuery/QueryProvider";
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
@@ -20,13 +21,15 @@ export default function RootLayout({
             lang="en"
             className=""
         >
-            <body
-                className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-screen `}
-            >
-                <Navbar />
-                <div className="pt-[100px]"></div>
-                {children}
-            </body>
+            <QueryProvider>
+                <body
+                    className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-screen `}
+                >
+                    <Navbar />
+                    <div className="pt-[100px]"></div>
+                    {children}
+                </body>
+            </QueryProvider>
         </html>
     );
 }
