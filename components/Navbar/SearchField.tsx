@@ -9,6 +9,8 @@ import { productsQuery } from "../ReactQuery/Queries";
 const SearchField = (props: Props) => {
     const queryClient = useQueryClient();
     const [searchField, setSearchField] = useState("");
+    const [dropMenuState, setDropMenuState] = useState(false);
+
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
         queryClient.fetchQuery(productsQuery({ searchTerm: searchField }));
@@ -21,8 +23,14 @@ const SearchField = (props: Props) => {
     };
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
-            <button className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none">
+            <button className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none ">
                 <FaAnglesDown className="w-5 h-5" />
+                <div className="relative">
+                    <div className="bg-primary text-black rounded-lg  flex flex-col absolute top-3 right-0">
+                        <div className=" ">Titles</div>
+                        {/* <div className=" p-1">Categories</div> */}
+                    </div>
+                </div>
             </button>
             <input
                 className=" grow  w-full p-1 px-2"

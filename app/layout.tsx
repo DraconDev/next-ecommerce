@@ -22,11 +22,11 @@ export default function RootLayout({
             className=""
         >
             <body
-                className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-screen `}
+                className={`bg-quaternary text-black ${quicksand.className} h-screen `}
             >
                 <QueryProvider>
                     <Navbar />
-                    <div className="pt-[100px]"></div>
+                    <div className="pt-[96px]"></div>
                     {children}
                 </QueryProvider>
             </body>
