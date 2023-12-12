@@ -24,17 +24,18 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
 
     return (
         <div className="relative w-full h-[250px]">
-            <div className="z-0 absolute  h-[420px]  w-full overflow-hidden e">
+            <div className="relative h-[420px] w-full overflow-hidden">
                 {images.map((image, index) => (
                     <div
                         key={index}
                         className={`${
                             index === currentIndex ? "" : "hidden"
-                        } duration-700 ease-in-out absolute top-0 left-0 w-full `}
+                        } duration-700 ease-in-out absolute top-0 left-0 w-full h-full`}
                     >
+                        <div className="absolute w-full h-[15%] bottom-0 bg-gradient-to-t from-quaternary to-transparent"></div>
                         <Image
                             src={`/carousel/${image}`} // Adjust the path based on your folder structure
-                            className="object-cover w-full h-full bg-gradient-fade-bottom bg-gradient-to-b"
+                            className="object-cover w-full h-full"
                             alt={`${index + 1}`}
                             width={1920}
                             height={1080}
@@ -43,7 +44,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
                 ))}
                 <button
                     type="button"
-                    className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-black text-white rounded-r-full opacity-50 hover:opacity-75 "
+                    className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 bg-black text-white rounded-r-full opacity-50 hover:opacity-75"
                     onClick={prevSlide}
                 >
                     <FaAngleDoubleLeft className="w-8 h-8" />
