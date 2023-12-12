@@ -14,7 +14,12 @@ const SearchField = (props: Props) => {
 
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
-        queryClient.fetchQuery(productsQuery({ searchTerm: searchField }));
+        queryClient.fetchQuery(
+            productsQuery({
+                searchTerm: searchField,
+                searchType: searchSetting,
+            })
+        );
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
