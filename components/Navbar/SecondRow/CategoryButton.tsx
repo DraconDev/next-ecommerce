@@ -7,7 +7,6 @@ const CategoryButton = ({ category }: { category: string }) => {
     const queryClient = useQueryClient();
 
     const fetchProducts = () => {
-        // Here we are using `queryClient.fetchQuery` to fetch the data manually.
         queryClient.fetchQuery(productsQuery({ searchTerm: category }));
     };
 
