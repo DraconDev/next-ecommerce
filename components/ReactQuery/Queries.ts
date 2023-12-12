@@ -6,7 +6,7 @@ type productsQueryType = {
     searchType?: string;
 };
 
-export function productsQuery({
+export function productQuery({
     searchTerm = "",
     searchType = "categories",
 }: productsQueryType) {

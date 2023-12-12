@@ -4,7 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
-import { productsQuery } from "../ReactQuery/Queries";
+import { productQuery } from "../ReactQuery/Queries";
 import DropdownOption from "./DropdownOption";
 
 const SearchField = (props: Props) => {
@@ -16,8 +16,9 @@ const SearchField = (props: Props) => {
 
     const fetchProducts = () => {
         if (searchField.length <= 2) return;
+        queryClient.invalidateQueries({ queryKey: ["products"] });
         queryClient.fetchQuery(
-            productsQuery({
+            productQuery({
                 searchTerm: searchField,
                 searchType: searchSetting,
             })
