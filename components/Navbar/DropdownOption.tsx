@@ -13,13 +13,13 @@ const DropdownOption = ({
 }: DropdownOptionProps) => {
     return (
         <button
-            className=" p-1 flex justify-between items-center px-2"
+            className=" p-1 flex justify-between items-center px-2 w-[150px]"
             onClick={() => {
-                setSearchSetting("titles");
+                setSearchSetting(option);
             }}
         >
             {option.charAt(0).toUpperCase() + option.slice(1)}
-            {searchSetting === "titles" && <FaCheck />}
+            {searchSetting === option && <FaCheck className="text-green-600" />}
         </button>
     );
 };
