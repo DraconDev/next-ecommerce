@@ -12,6 +12,12 @@ const SearchField = (props: Props) => {
         if (searchField.length <= 2) return;
         queryClient.fetchQuery(productsQuery({ searchTerm: searchField }));
     };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            fetchProducts();
+        }
+    };
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
             <input
@@ -19,6 +25,7 @@ const SearchField = (props: Props) => {
                 placeholder="Search"
                 value={searchField}
                 onChange={(e) => setSearchField(e.target.value)}
+                onKeyDown={handleKeyDown}
             ></input>
             <button
                 className="p-1 px-2  rounded-l-none rounded-lg bg-accent"
