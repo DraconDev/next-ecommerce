@@ -4,7 +4,7 @@ import { queryOptions } from "@tanstack/react-query";
 export function productsQuery({ searchTerm = "" }: { searchTerm: string }) {
     const searchTermLower = searchTerm.toLowerCase();
 
-    if (searchTerm === "" || searchTermLower !== "all") {
+    if (searchTermLower === "" || searchTermLower === "all") {
         return queryOptions({
             queryKey: ["products"],
             queryFn: () =>
@@ -22,7 +22,7 @@ export function productsQuery({ searchTerm = "" }: { searchTerm: string }) {
                 .then((res) => res.json() as Promise<ProductType[]>)
                 .then((data) => {
                     return data.filter((product) =>
-                        product.title.toLowerCase().includes(searchTermLower)
+                        product.category.toLowerCase().includes(searchTermLower)
                     );
                 }),
         // staleTime: 5 * 1000,
