@@ -2,6 +2,7 @@
 type Props = {};
 import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { FaAnglesDown } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import { productsQuery } from "../ReactQuery/Queries";
 
@@ -20,8 +21,11 @@ const SearchField = (props: Props) => {
     };
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
+            <button className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none">
+                <FaAnglesDown className="w-5 h-5" />
+            </button>
             <input
-                className=" grow rounded-lg rounded-r-none w-full p-1 px-2"
+                className=" grow  w-full p-1 px-2"
                 placeholder="Search"
                 value={searchField}
                 onChange={(e) => setSearchField(e.target.value)}
