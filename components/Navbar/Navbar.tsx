@@ -12,7 +12,7 @@ const Navbar = (props: Props) => {
         <div className="z-30 fixed top-0 left-0 text-primary bg-secondary w-full md:text-3xl flex flex-col justify-center items-center p">
             <div className="w-full flex   items-center max-w-6xl gap-2 justify-between p-1">
                 <Link href={"/"}>
-                    <SiTurbosquid className="w-12 h-12" />
+                    <SiTurbosquid className="w-12 h-12 spin" />
                 </Link>
                 <SearchField />
                 <div className="flex gap-2">
