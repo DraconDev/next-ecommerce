@@ -1,3 +1,4 @@
+"use client";
 import { ProductType } from "@/types/types";
 import Image from "next/image";
 import Rating from "./Rating";

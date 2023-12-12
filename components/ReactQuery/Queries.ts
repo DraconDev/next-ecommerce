@@ -3,6 +3,7 @@ import { queryOptions } from "@tanstack/react-query";
 
 export function productsQuery({ searchTerm = "" }: { searchTerm: string }) {
     const searchTermLower = searchTerm.toLowerCase();
+
     if (searchTerm === "" || searchTermLower !== "all") {
         return queryOptions({
             queryKey: ["products"],

@@ -21,15 +21,15 @@ export default function RootLayout({
             lang="en"
             className=""
         >
-            <QueryProvider>
-                <body
-                    className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-screen `}
-                >
+            <body
+                className={`bg-quaternary text-black ${quicksand.className} w-[98vw] h-screen `}
+            >
+                <QueryProvider>
                     <Navbar />
                     <div className="pt-[100px]"></div>
                     {children}
-                </body>
-            </QueryProvider>
+                </QueryProvider>
+            </body>
         </html>
     );
 }
