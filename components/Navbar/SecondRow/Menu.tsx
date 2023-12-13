@@ -19,7 +19,7 @@ const Menu = (props: Props) => {
                 <div className="fixed w-[250px] max-w-[75%] h-screen bg-white mt-2 md:mt-1 ml-[-4px] text-center text-black ">
                     <div className="w-full flex flex-col gap-3 ">
                         <CategoryButton category="Best sellers" />
-                        <MenuList />
+                        <MenuList click={() => setVisible(!visible)} />
                     </div>
                 </div>
             )}

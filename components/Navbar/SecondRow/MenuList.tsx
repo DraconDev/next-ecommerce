@@ -1,8 +1,10 @@
 import MyContext from "@/state/context";
 import { useContext } from "react";
-import CategoryButton from "./CategoryButton";
+import MenuItem from "./MenuItem";
 
-type Props = {};
+type Props = {
+    click: () => void;
+};
 
 const MenuList = (props: Props) => {
     const state = useContext(MyContext);
@@ -11,9 +13,10 @@ const MenuList = (props: Props) => {
             className={`flex w-full flex-col gap-2 items-center text-sm  md:text-lg `}
         >
             {state.categories.slice(1).map((category) => (
-                <CategoryButton
+                <MenuItem
                     key={category}
                     category={category}
+                    click={props.click}
                 />
             ))}
         </div>
