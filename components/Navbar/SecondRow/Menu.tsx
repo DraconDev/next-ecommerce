@@ -44,7 +44,7 @@ const Menu = () => {
                     ref={dropdownRef}
                     className="fixed w-[250px] max-w-[75%] h-screen bg-white mt-2 md:mt-1 ml-[-4px] text-center text-black  border-secondary border-l-2 border-r-2 flex-col justify-between"
                 >
-                    <div className="w-full h-[90%] flex flex-col justify-between py-4">
+                    <div className="w-full h-[90%] flex flex-col justify-between py-2">
                         <div className="w-full flex flex-col gap-2 ">
                             <MenuItemSpecial
                                 category="Best sellers"
