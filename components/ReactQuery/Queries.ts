@@ -70,7 +70,7 @@ export function bestSellers() {
                 .then((data) => {
                     const sortedData = sortByProperty(data, "rating");
 
-                    return sortedData;
+                    return sortedData.slice(0,10);
                 });
         },
     });
@@ -80,5 +80,5 @@ function sortByProperty(
     arr: ProductType[],
     prop: keyof ProductType
 ): ProductType[] {
-    return arr.sort((a, b) => a.rating.count - b.rating.count);
+    return arr.sort((a, d) => d.rating.count - a.rating.count);
 }
