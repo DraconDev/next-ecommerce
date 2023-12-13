@@ -1,6 +1,6 @@
 "use client";
 
-import { productQuery } from "@/components/ReactQuery/Queries";
+import { bestSellers } from "@/components/ReactQuery/Queries";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import MenuItemUI from "./MenuItemUI";
@@ -17,7 +17,7 @@ const MenuItem = ({
 
     const fetchProducts = () => {
         // queryClient.invalidateQueries({ queryKey: ["products"] });
-        queryClient.fetchQuery(productQuery({ searchTerm: category }));
+        queryClient.fetchQuery(bestSellers());
         click();
         router.push("/products");
     };

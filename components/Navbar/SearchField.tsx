@@ -24,9 +24,6 @@ const SearchField = (props: Props) => {
                 searchType: searchSetting,
             })
         );
-
-        // push to products page
-        // Navigate to the products page
         router.push("/products");
     };
 
