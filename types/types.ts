@@ -12,3 +12,8 @@ export type ProductType = {
     image: string; //
     rating: RatingType; //
 };
+
+export type BasketItemType = {
+    product: ProductType;
+    quantity: number;
+};
