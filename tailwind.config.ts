@@ -20,7 +20,7 @@ const config: Config = {
                 quaternary: "#E3E6E6",
                 accent: "#FF9900",
                 accent2: "#1BA1FF",
-                bgGrad: "#cdcdcd",
+                bgGrad: "#d3d3d3",
             },
         },
     },

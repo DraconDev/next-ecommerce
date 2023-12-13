@@ -24,7 +24,7 @@ export default function RootLayout({
         >
             <AuthProvider>
                 <body
-                    className={` text-black ${quicksand.className} h-screen bg-gradient-to-b from-bgGrad to-quaternary  `}
+                    className={` text-black ${quicksand.className}  bg-gradient-to-b from-bgGrad to-quaternary  after:bg-quaternary`}
                 >
                     <QueryProvider>
                         <Navbar />
