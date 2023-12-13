@@ -15,7 +15,7 @@ const Menu = (props: Props) => {
                 <IoMenu className="w-8 h-8" />
             </button>
             {visible && (
-                <div className="fixed w-[250px] max-w-[75%] h-screen bg-white mt-1 text-center text-black ">
+                <div className="fixed w-[250px] max-w-[75%] h-screen bg-white mt-2 md:mt-1 ml-[-4px] text-center text-black ">
                     <div className="w-full flex flex-col gap-3 ">
                         <CategoryButton category="Best sellers" />
                         {/* <CategoryList
