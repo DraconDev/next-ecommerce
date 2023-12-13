@@ -1,6 +1,7 @@
 "use client";
 type Props = {};
 import { useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
@@ -13,8 +14,9 @@ const SearchField = (props: Props) => {
     const [dropMenuState, setDropMenuState] = useState(false);
     const [searchSetting, setSearchSetting] = useState("titles");
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const router = useRouter();
 
-    const fetchProducts = () => {
+    const fetchProducts = async () => {
         if (searchField.length <= 2) return;
         queryClient.fetchQuery(
             productQuery({
@@ -22,6 +24,10 @@ const SearchField = (props: Props) => {
                 searchType: searchSetting,
             })
         );
+
+        // push to products page
+        // Navigate to the products page
+        router.push("/products");
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -41,14 +47,12 @@ const SearchField = (props: Props) => {
     };
 
     useEffect(() => {
-        // Add event listener when the component mounts
         document.addEventListener("mousedown", handleMouseDown);
 
-        // Remove event listener when the component unmounts
         return () => {
             document.removeEventListener("mousedown", handleMouseDown);
         };
-    }, []); // Empty dependency array ensures this effect runs only once
+    }, []);
 
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
