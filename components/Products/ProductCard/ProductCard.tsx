@@ -1,9 +1,13 @@
 "use client";
+import { basketItems } from "@/state/jotai";
 import { ProductType } from "@/types/types";
+import { useAtom } from "jotai";
 import Image from "next/image";
 import Rating from "./Rating";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
+    const [basket, addToBasket] = useAtom(basketItems);
+
     return (
         <div className="flex flex-col w-[255px] h-[620px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl max-w-[700px] z-20">
             <div className="flex items-center h-3/5">
@@ -32,6 +36,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                     <Rating rating={product.rating} />
                     <p className="font-bold text-xl">{`$${product.price}`}</p>
                 </div>
+                <button
+                    className="w-full h-10 bg-accent text-primary font-bold p-1 rounded-lg"
+                    onClick={() => addToBasket([...basket, product])}
+                >
+                    Add to basket
+                </button>
             </div>
         </div>
     );

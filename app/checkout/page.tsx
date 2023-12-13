@@ -1,4 +1,4 @@
-import CheckoutList from "@/components/Checkout/CheckoutList";
+import CheckoutItems from "@/components/Checkout/CheckoutItems";
 import PaymentBox from "@/components/Checkout/PaymentBox";
 import PriceBox from "@/components/Checkout/PriceBox";
 import MainWrapper from "@/components/layout/MainWrapper";
@@ -8,9 +8,9 @@ type Props = {};
 const Checkout = (props: Props) => {
     return (
         <MainWrapper>
-            <div className="">
+            <div className="w-2/3">
                 <PaymentBox />
-                <CheckoutList />
+                <CheckoutItems />
             </div>
             <PriceBox />
         </MainWrapper>
