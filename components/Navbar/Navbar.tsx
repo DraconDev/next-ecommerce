@@ -15,7 +15,7 @@ const Navbar = (props: Props) => {
                     <SiTurbosquid className="w-12 h-12 spin" />
                 </Link>
                 <SearchField />
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                     <Login />
                     <Basket />
                 </div>
