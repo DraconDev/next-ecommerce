@@ -34,7 +34,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
                     >
                         {/* add fade to bottom */}
 
-                        <div className="absolute bottom-0 left-0 w-full h-[15%] bg-gradient-to-t from-quaternary to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 w-full h-[15%] bg-gradient-to-t from-bgGrad to-transparent"></div>
                         <Image
                             src={`/carousel/${image}`} // Adjust the path based on your folder structure
                             className="object-cover w-full h-full"
