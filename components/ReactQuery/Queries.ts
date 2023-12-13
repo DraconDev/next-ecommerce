@@ -20,7 +20,7 @@ export function productQuery({
                     (res) => res.json() as Promise<ProductType[]>
                 ),
             // .then((data) => {}),
-            // staleTime: 5 * 1000,
+            staleTime: Infinity,
         });
     }
 
