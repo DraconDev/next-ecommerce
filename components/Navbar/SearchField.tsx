@@ -14,6 +14,7 @@ const SearchField = (props: Props) => {
     const [dropMenuState, setDropMenuState] = useState(false);
     const [searchSetting, setSearchSetting] = useState("titles");
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
     const router = useRouter();
 
     const fetchProducts = async () => {
@@ -33,21 +34,23 @@ const SearchField = (props: Props) => {
         }
     };
 
-    const handleMouseDown = (event: MouseEvent) => {
-        // Close the dropdown if the click is outside of it
+    const handleClickOutside = (event: MouseEvent) => {
+        // Close the dropdown if the click is outside of it and not on the button
         if (
             dropdownRef.current &&
-            !dropdownRef.current.contains(event.target as Node)
+            buttonRef.current &&
+            !dropdownRef.current.contains(event.target as Node) &&
+            !buttonRef.current.contains(event.target as Node)
         ) {
             setDropMenuState(false);
         }
     };
 
     useEffect(() => {
-        document.addEventListener("mousedown", handleMouseDown);
+        document.addEventListener("mousedown", handleClickOutside);
 
         return () => {
-            document.removeEventListener("mousedown", handleMouseDown);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
@@ -56,6 +59,7 @@ const SearchField = (props: Props) => {
             <button
                 className="p-2 bg-tertiary text-accent rounded-lg rounded-r-none "
                 onClick={() => setDropMenuState(!dropMenuState)}
+                ref={buttonRef}
             >
                 <FaAnglesDown className="w-5 h-5" />
                 <div
@@ -63,7 +67,7 @@ const SearchField = (props: Props) => {
                     ref={dropdownRef}
                 >
                     {dropMenuState && (
-                        <div className="bg-secondary text-white rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-accent">
+                        <div className="bg-white text-black rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-primary ">
                             <DropdownOption
                                 option="titles"
                                 setSearchSetting={setSearchSetting}

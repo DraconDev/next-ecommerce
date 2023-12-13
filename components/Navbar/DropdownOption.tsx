@@ -13,7 +13,7 @@ const DropdownOption = ({
 }: DropdownOptionProps) => {
     return (
         <button
-            className=" p-1 flex justify-between items-center px-2 w-[150px] "
+            className=" p-1 flex justify-between items-center px-2 w-[150px] hover:text-accent"
             onClick={() => {
                 setSearchSetting(option);
             }}
