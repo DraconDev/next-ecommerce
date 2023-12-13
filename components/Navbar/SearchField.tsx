@@ -67,7 +67,7 @@ const SearchField = (props: Props) => {
                     ref={dropdownRef}
                 >
                     {dropMenuState && (
-                        <div className="bg-white text-black rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-primary ">
+                        <div className="bg-white text-black rounded-lg  flex flex-col absolute top-3 left-[-10px] p-1 border-2 border-secondary ">
                             <DropdownOption
                                 option="titles"
                                 setSearchSetting={setSearchSetting}
