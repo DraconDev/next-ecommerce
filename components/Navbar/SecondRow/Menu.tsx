@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 import MenuList from "./MenuList";
 
 const Menu = (props: Props) => {
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     return (
         <div>
             <button
