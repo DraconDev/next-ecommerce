@@ -8,7 +8,7 @@ const CheckoutItems = (props: Props) => {
     const [basket, _] = useAtom(basketItems);
     return (
         <div>
-            {basket.map((item, index) => (
+            {/* {basket.map((item, index) => (
                 <div
                     key={index}
                     className="flex justify-between text-xl w-2/3"
@@ -16,7 +16,7 @@ const CheckoutItems = (props: Props) => {
                     <p>{item.title}</p>
                     <p className="">{`$${item.price}`}</p>
                 </div>
-            ))}
+            ))} */}
         </div>
     );
 };

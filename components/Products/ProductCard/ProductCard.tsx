@@ -6,7 +6,19 @@ import Image from "next/image";
 import Rating from "./Rating";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
-    const [basket, addToBasket] = useAtom(basketItems);
+    const [itemsMap, setItemsMap] = useAtom(basketItems);
+
+    const updateItem = (item: ProductType) => {
+        // Mutate the map directly
+        const elem = itemsMap.get(item.id);
+        itemsMap.set(item.id, {
+            product: item,
+            quantity: elem ? elem.quantity + 1 : 1,
+        });
+
+        // Trigger an update with the same map reference
+        setItemsMap(itemsMap);
+    };
 
     return (
         <div className="flex flex-col w-[255px] h-[620px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl max-w-[700px] z-20">
@@ -38,7 +50,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                 </div>
                 <button
                     className="w-full h-10 bg-accent text-primary font-bold p-1 rounded-lg"
-                    onClick={() => addToBasket([...basket, product])}
+                    onClick={() => updateItem(product)}
                 >
                     Add to basket
                 </button>
