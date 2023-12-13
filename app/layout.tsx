@@ -1,3 +1,4 @@
+import AuthProvider from "@/components/Auth/AuthProvider";
 import Navbar from "@/components/Navbar/Navbar";
 import QueryProvider from "@/components/ReactQuery/QueryProvider";
 import type { Metadata } from "next";
@@ -21,15 +22,17 @@ export default function RootLayout({
             lang="en"
             className=""
         >
-            <body
-                className={`bg-quaternary text-black ${quicksand.className} h-screen `}
-            >
-                <QueryProvider>
-                    <Navbar />
-                    <div className="pt-[96px]"></div>
-                    {children}
-                </QueryProvider>
-            </body>
+            <AuthProvider>
+                <body
+                    className={`bg-quaternary text-black ${quicksand.className} h-screen `}
+                >
+                    <QueryProvider>
+                        <Navbar />
+                        <div className="pt-[96px]"></div>
+                        {children}
+                    </QueryProvider>
+                </body>
+            </AuthProvider>
         </html>
     );
 }
