@@ -3,16 +3,13 @@ import MyContext from "@/state/context";
 import { useContext } from "react";
 import CategoryButton from "./CategoryButton";
 
-type Props = {
-    start?: number;
-    align?: string;
-};
-
-const CategoryList = ({ start = 0, align = "row" }: Props) => {
+const CategoryList = () => {
     const state = useContext(MyContext);
     return (
-        <div className={`flex w-full flex-${align} gap-3 items-center`}>
-            {state.categories.slice(start).map((category) => (
+        <div
+            className={`flex w-full flex-row gap-2 items-center text-sm  md:text-lg `}
+        >
+            {state.categories.map((category) => (
                 <CategoryButton
                     key={category}
                     category={category}

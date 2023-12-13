@@ -11,7 +11,11 @@ const CategoryButton = ({ category }: { category: string }) => {
         queryClient.fetchQuery(productQuery({ searchTerm: category }));
     };
 
-    return <button onClick={fetchProducts}>{category}</button>;
+    return (
+        <button onClick={fetchProducts}>
+            <p>{category}</p>
+        </button>
+    );
 };
 
 export default CategoryButton;
