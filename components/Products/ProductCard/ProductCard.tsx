@@ -21,17 +21,17 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     };
 
     return (
-        <div className="flex flex-col w-[255px] h-[620px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl max-w-[700px] z-20">
-            <div className="flex items-center h-3/5">
+        <div className="flex flex-col w-[255px] h-[610px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl max-w-[700px] z-20">
+            <div className="flex items-center h-[55%]">
                 <Image
                     src={product.image}
                     alt={product.title}
-                    width={230}
+                    width={270}
                     height={300}
-                    className="max-h-[300px] max-w-[230px] object-contain"
+                    className="max-h-[300px] max-w-[300px] object-contain"
                 />
             </div>
-            <div className="h-2/5 flex flex-col justify-between">
+            <div className="h-[45%] flex flex-col justify-between">
                 <div className="flex flex-col justify-between h-full py-1">
                     <div className="font-bold text-lg h-full">
                         {product.title.length > 60
