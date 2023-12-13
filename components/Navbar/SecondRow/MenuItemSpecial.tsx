@@ -5,7 +5,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import MenuItemUI from "./MenuItemUI";
 
-const MenuItem = ({
+const MenuItemSpecial = ({
     category,
     click,
 }: {
@@ -30,4 +30,4 @@ const MenuItem = ({
     );
 };
 
-export default MenuItem;
+export default MenuItemSpecial;

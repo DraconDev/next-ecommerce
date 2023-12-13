@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import MenuItem from "./MenuItem";
+import MenuItemSpecial from "./MenuItemSpecial";
 import MenuList from "./MenuList";
 
 const Menu = () => {
@@ -46,7 +46,7 @@ const Menu = () => {
                 >
                     <div className="w-full h-[90%] flex flex-col justify-between py-1">
                         <div className="w-full flex flex-col gap-2 ">
-                            <MenuItem
+                            <MenuItemSpecial
                                 category="Best sellers"
                                 click={() => setVisible(!visible)}
                             />
