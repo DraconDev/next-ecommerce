@@ -35,27 +35,23 @@ const ProductPage = () => {
     return (
         product && (
             <MainWrapper>
-                <div className="flex flex-col w-[255px] h-[610px] items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl max-w-[700px] z-20">
-                    <div className="flex items-center h-[55%]">
+                <div className={` flex md:flex-row flex-col p-3 px-1`}>
+                    <div className="flex w-full md:w-2/3 bg-primary justify-center items-center grow">
                         <Image
                             src={product.image}
                             alt={product.title}
-                            width={270}
-                            height={300}
-                            className="max-h-[300px] max-w-[300px] object-contain"
+                            width={700}
+                            height={700}
+                            className="object-contain max-h-[700px] max-w-full md:max-w-[700px] rounded-lg"
                         />
                     </div>
-                    <div className="h-[45%] flex flex-col justify-between">
-                        <div className="flex flex-col justify-between h-full py-1">
-                            <div className="font-bold text-lg h-full">
-                                {product.title.length > 60
-                                    ? `${product.title.slice(0, 60)}...`
-                                    : product.title}
+                    <div className=" flex flex-col justify-between text-center gap-3 p-3 w-full">
+                        <div className="flex flex-col  h-full py-1 gap-6">
+                            <div className="font-bold text-2xl ">
+                                {product.title}
                             </div>
-                            <div className="h-full">
-                                {product.description.length > 100
-                                    ? `${product.description.slice(0, 100)}...`
-                                    : product.description}
+                            <div className=" text-lg">
+                                {product.description}
                             </div>
                         </div>
                         <div className="">
@@ -63,7 +59,7 @@ const ProductPage = () => {
                             <p className="font-bold text-xl">{`$${product.price}`}</p>
                         </div>
                         <button
-                            className="w-full h-10 bg-accent text-primary font-bold p-1 rounded-lg"
+                            className=" h-10 bg-accent text-primary font-bold p-1 rounded-lg"
                             onClick={() => updateItem(product)}
                         >
                             Add to basket
