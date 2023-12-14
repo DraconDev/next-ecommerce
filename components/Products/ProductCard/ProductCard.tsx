@@ -8,16 +8,31 @@ import Rating from "./Rating";
 const ProductCard = ({ product }: { product: ProductType }) => {
     const [itemsMap, setItemsMap] = useAtom(basketItems);
 
+    // const updateItem = (item: ProductType) => {
+    //     // Mutate the map directly
+    //     const elem = itemsMap.get(item.id);
+    //     itemsMap.set(item.id, {
+    //         product: item,
+    //         quantity: elem ? elem.quantity + 1 : 1,
+    //     });
+
+    //     // Trigger an update with the same map reference
+    //     setItemsMap(itemsMap);
+    // };
+
     const updateItem = (item: ProductType) => {
-        // Mutate the map directly
-        const elem = itemsMap.get(item.id);
-        itemsMap.set(item.id, {
+        // Create a new Map instance with updated values
+        const updatedMap = new Map(itemsMap);
+
+        const existingItem = updatedMap.get(item.id);
+
+        updatedMap.set(item.id, {
             product: item,
-            quantity: elem ? elem.quantity + 1 : 1,
+            quantity: existingItem ? existingItem.quantity + 1 : 1,
         });
 
-        // Trigger an update with the same map reference
-        setItemsMap(itemsMap);
+        // Trigger an update with the new Map instance
+        setItemsMap(updatedMap);
     };
 
     return (
