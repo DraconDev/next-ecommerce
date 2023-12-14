@@ -11,8 +11,8 @@ const Checkout = (props: Props) => {
             <div className="w-2/3">
                 <PaymentBox />
                 <CheckoutItems />
-            </div>
             <PriceBox />
+            </div>
         </MainWrapper>
     );
 };
