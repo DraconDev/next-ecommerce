@@ -1,5 +1,6 @@
 "use client";
-import { basketItems, currentProduct } from "@/state/jotai";
+import { useUpdateItem } from "@/helpers/shop";
+import { currentProduct } from "@/state/jotai";
 import { ProductType } from "@/types/types";
 import { useAtom } from "jotai";
 import Image from "next/image";
@@ -7,23 +8,8 @@ import Link from "next/link";
 import Rating from "./Rating";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
-    const [itemsMap, setItemsMap] = useAtom(basketItems);
     const [curProduct, setCurProduct] = useAtom(currentProduct);
-
-    const updateItem = (item: ProductType) => {
-        // Create a new Map instance with updated values
-        const updatedMap = new Map(itemsMap);
-
-        const existingItem = updatedMap.get(item.id);
-
-        updatedMap.set(item.id, {
-            product: item,
-            quantity: existingItem ? existingItem.quantity + 1 : 1,
-        });
-
-        // Trigger an update with the new Map instance
-        setItemsMap(updatedMap);
-    };
+    const updateItem = useUpdateItem();
 
     return (
         <div className="flex flex-col   items-center justify-between text-center p-1 flex-shrink-0 grow bg-primary rounded-xl z-20">

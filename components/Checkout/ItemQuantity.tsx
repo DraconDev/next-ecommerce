@@ -30,6 +30,8 @@ const ItemQuantity = ({ item }: { item: BasketItemType }) => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    
     return (
         <div className="relative">
             <button

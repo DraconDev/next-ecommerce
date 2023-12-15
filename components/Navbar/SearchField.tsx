@@ -1,8 +1,10 @@
 "use client";
 type Props = {};
+
+import { useHandleClickOutside } from "@/helpers/clickoutside";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import { productQuery } from "../ReactQuery/Queries";
@@ -11,10 +13,11 @@ import DropdownOption from "./DropdownOption";
 const SearchField = (props: Props) => {
     const queryClient = useQueryClient();
     const [searchField, setSearchField] = useState("");
-    const [dropMenuState, setDropMenuState] = useState(false);
+    const { dropdownRef, buttonRef, dropMenuState, setDropMenuState } =
+        useHandleClickOutside();
+
     const [searchSetting, setSearchSetting] = useState("titles");
-    const dropdownRef = useRef<HTMLDivElement | null>(null);
-    const buttonRef = useRef<HTMLButtonElement | null>(null);
+
     const router = useRouter();
 
     const fetchProducts = async () => {
@@ -33,26 +36,6 @@ const SearchField = (props: Props) => {
             fetchProducts();
         }
     };
-
-    const handleClickOutside = (event: MouseEvent) => {
-        // Close the dropdown if the click is outside of it and not on the button
-        if (
-            dropdownRef.current &&
-            buttonRef.current &&
-            !dropdownRef.current.contains(event.target as Node) &&
-            !buttonRef.current.contains(event.target as Node)
-        ) {
-            setDropMenuState(false);
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
 
     return (
         <div className="text-xl  w-full   border-2 border-accent rounded-xl flex grow text-black ">
