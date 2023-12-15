@@ -1,5 +1,5 @@
 "use client";
-import { useUpdateItem } from "@/helpers/shop";
+import { useUpdateItem } from "@/helpers/shop/shop";
 import { currentProduct } from "@/state/jotai";
 import { ProductType } from "@/types/types";
 import { useAtom } from "jotai";

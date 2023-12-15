@@ -1,7 +1,7 @@
 "use client";
 type Props = {};
 
-import { useHandleClickOutside } from "@/helpers/clickoutside";
+import { useHandleClickOutside } from "@/helpers/click/clickoutside";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

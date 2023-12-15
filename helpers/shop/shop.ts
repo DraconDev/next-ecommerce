@@ -6,7 +6,7 @@ export const useUpdateItem = () => {
     const [itemsMap, setItemsMap] = useAtom(basketItems);
 
     // This function will be returned by the hook and can be used to update the item.
-    const updateItem = (item: ProductType) => {
+    const updateItem = (item: ProductType, amount?: number) => {
         // Create a new Map instance with updated values
         const updatedMap = new Map(itemsMap);
 
@@ -14,7 +14,9 @@ export const useUpdateItem = () => {
 
         updatedMap.set(item.id, {
             product: item,
-            quantity: (existingItem ? existingItem.quantity : 0) + 1,
+            quantity:
+                (amount ? amount : existingItem ? existingItem.quantity : 0) +
+                1,
         });
 
         // Trigger an update with the new Map instance

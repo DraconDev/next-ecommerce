@@ -1,3 +1,4 @@
+import { useUpdateItem } from "@/helpers/shop/shop";
 import { BasketItemType } from "@/types/types";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
@@ -5,6 +6,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 type Props = {};
 
 const ItemQuantity = ({ item }: { item: BasketItemType }) => {
+    const updateQuantity = useUpdateItem();
     const [dropdownState, setDropdownState] = useState(false);
     const amount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -31,7 +33,6 @@ const ItemQuantity = ({ item }: { item: BasketItemType }) => {
         };
     }, []);
 
-    
     return (
         <div className="relative">
             <button
@@ -53,6 +54,7 @@ const ItemQuantity = ({ item }: { item: BasketItemType }) => {
                         <button
                             key={amount}
                             className="w-8 h-8 flex justify-center items-center hover:bg-accent rounded-lg"
+                            onClick={() => updateQuantity(item.product, amount)}
                         >
                             {amount}
                         </button>
