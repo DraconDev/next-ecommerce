@@ -2,6 +2,7 @@
 import { basketItems } from "@/state/jotai";
 import { BasketItemType } from "@/types/types";
 import { useAtom } from "jotai";
+import ItemQuantity from "./ItemQuantity";
 
 type Props = {};
 
@@ -22,7 +23,7 @@ const CheckoutItems = (props: Props) => {
                     </p>
                     <div className="flex justify-between gap-4 w-1/6">
                         <div className="flex ">{`$${item.product.price}`}</div>
-                        <div className="">{item.quantity}</div>
+                        <ItemQuantity item={item} />
                     </div>
                 </div>
             ))}
