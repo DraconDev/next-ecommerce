@@ -21,7 +21,7 @@ const CheckoutItems = (props: Props) => {
                     <p className="flex flex-wrap w-1/2 ">
                         {item.product.title}
                     </p>
-                    <div className="flex justify-between gap-4 w-1/6">
+                    <div className="flex justify-between gap-4 w-1/5">
                         <div className="flex ">{`$${item.product.price}`}</div>
                         <ItemQuantity item={item} />
                     </div>
