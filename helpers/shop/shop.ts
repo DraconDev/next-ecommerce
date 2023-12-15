@@ -14,9 +14,11 @@ export const useUpdateItem = () => {
 
         updatedMap.set(item.id, {
             product: item,
-            quantity:
-                (amount ? amount : existingItem ? existingItem.quantity : 0) +
-                1,
+            quantity: amount
+                ? amount
+                : existingItem
+                ? existingItem.quantity + 1
+                : 1,
         });
 
         // Trigger an update with the new Map instance
