@@ -1,13 +1,16 @@
 "use client";
-import { basketItems } from "@/state/jotai";
+import { basketItems, currentProduct } from "@/state/jotai";
 import { BasketItemType } from "@/types/types";
 import { useAtom } from "jotai";
+import Link from "next/link";
 import ItemQuantity from "./ItemQuantity";
 
 type Props = {};
 
 const CheckoutItems = (props: Props) => {
     const [basket, _] = useAtom<Map<number, BasketItemType>>(basketItems);
+
+    const [curProduct, setCurProduct] = useAtom(currentProduct);
 
     return (
         <div className="w-full gap-3 flex flex-col p-2">
@@ -17,10 +20,13 @@ const CheckoutItems = (props: Props) => {
                     key={index}
                     className="flex justify-between text-xl w-full"
                 >
-                    {/* Access properties from the BasketItemType */}
-                    <p className="flex flex-wrap w-1/2 ">
-                        {item.product.title}
-                    </p>
+                    <Link
+                        href="/product"
+                        onClick={() => setCurProduct(item.product)}
+                        className="flex flex-wrap w-2/3  min-h-[40px] p-2 rounded-lg"
+                    >
+                        <div className="">{item.product.title}</div>
+                    </Link>
                     <div className="flex justify-between gap-4 w-1/5">
                         <div className="flex ">{`$${item.product.price}`}</div>
                         <ItemQuantity item={item} />
