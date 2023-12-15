@@ -33,7 +33,10 @@ const ItemQuantity = ({ item }: { item: BasketItemType }) => {
                         <button
                             key={amount}
                             className="w-8 h-8 flex justify-center items-center hover:bg-accent rounded-lg"
-                            onClick={() => updateQuantity(item.product, amount)}
+                            onClick={() => {
+                                updateQuantity(item.product, amount);
+                                setDropMenuState(false);
+                            }}
                         >
                             {amount}
                         </button>
