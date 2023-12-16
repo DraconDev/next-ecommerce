@@ -17,3 +17,5 @@ export type BasketItemType = {
     product: ProductType;
     quantity: number;
 };
+
+export type BasketItemTypes = Map<number, BasketItemType>;

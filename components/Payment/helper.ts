@@ -1,4 +1,5 @@
 import { CartItem } from "@/types/payment";
+import { BasketItemTypes } from "@/types/types";
 import { ACTIVE_CURRENCY } from "./consts";
 
 export async function generatePaymentIntentWithCart(cartItems: CartItem[]) {
@@ -21,4 +22,13 @@ export async function generatePaymentIntentWithCart(cartItems: CartItem[]) {
     } catch (error) {
         throw error;
     }
+}
+
+export function convertBasketToCart(basket: BasketItemTypes) {
+    return Object.values(basket).map((item) => {
+        return {
+            price: item.product.price,
+            quantity: item.quantity,
+        };
+    });
 }
