@@ -4,8 +4,8 @@ import MainWrapper from "@/components/layout/MainWrapper";
 import { basketItems, currentProduct } from "@/state/jotai";
 import { ProductType } from "@/types/types";
 import { useAtom } from "jotai";
-import { useRouter } from "next/router";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ProductPage = () => {
     const [itemsMap, setItemsMap] = useAtom(basketItems);
