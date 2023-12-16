@@ -23,7 +23,7 @@ const PaymentBox = ({ children }: { children?: React.ReactNode }) => {
                 setClientSecret(secret);
             }
         );
-    }, []);
+    }, [items]);
 
     const appearance = {
         theme: "stripe",
