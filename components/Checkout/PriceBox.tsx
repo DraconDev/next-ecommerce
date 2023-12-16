@@ -12,9 +12,9 @@ const PriceBox = (props: Props) => {
             <div className="flex flex-col items-end p-1 gap-1">
                 <div className="">Sum Total</div>
                 <div className="">${price.toFixed(2)}</div>
-                <button className="font-bold p-2 bg-accent rounded-lg">
+                {/* <button className="font-bold p-2 bg-accent rounded-lg">
                     Buy
-                </button>
+                </button> */}
             </div>
         </div>
     );

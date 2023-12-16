@@ -10,9 +10,9 @@ const Checkout = (props: Props) => {
     return (
         <MainWrapper>
             <div className="w-2/3">
-                <PaymentBox />
                 <CheckoutItems />
                 <PriceBox />
+                <PaymentBox />
             </div>
         </MainWrapper>
     );
