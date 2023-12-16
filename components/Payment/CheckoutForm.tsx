@@ -4,7 +4,7 @@ import {
     useElements,
     useStripe,
 } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IS_TEST_MODE, TEST_CARD_NUMBER } from "./consts";
 
 export default function CheckoutForm() {
@@ -17,8 +17,12 @@ export default function CheckoutForm() {
     // http://localhost:3000/checkout/success"
     const return_url = "http://localhost:3000/orders";
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!stripe) {
+            return;
+        }
+
+        if (typeof window === "undefined") {
             return;
         }
 
