@@ -22,7 +22,7 @@ export default function CheckoutForm() {
             return;
         }
 
-        if (typeof window === "undefined") {
+        if (typeof window === "undefined" || !window?.location?.search) {
             return;
         }
 
