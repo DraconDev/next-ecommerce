@@ -1,7 +1,23 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 type Props = {};
 
 const Orders = (props: Props) => {
-    return <div>Orders</div>;
+    const router = useRouter();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            // The action you want to perform after 3 seconds
+            router.push("/");
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
+    return (
+        <div className="flex justify-center w-full h-full items-center">
+            Order Successful
+        </div>
+    );
 };
 
 export default Orders;
