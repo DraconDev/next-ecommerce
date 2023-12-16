@@ -4,7 +4,7 @@ import {
     useElements,
     useStripe,
 } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IS_TEST_MODE, TEST_CARD_NUMBER } from "./consts";
 
 export default function CheckoutForm() {
@@ -17,43 +17,43 @@ export default function CheckoutForm() {
     // http://localhost:3000/checkout/success"
     const return_url = "http://localhost:3000/orders/success";
 
-    // useEffect(() => {
-    //     if (!stripe) {
-    //         return;
-    //     }
+    useEffect(() => {
+        if (!stripe) {
+            return;
+        }
 
-    //     if (typeof window === "undefined" || !window?.location?.search) {
-    //         return;
-    //     }
+        if (typeof window === "undefined" || !window?.location?.search) {
+            return;
+        }
 
-    //     const clientSecret = new URLSearchParams(window.location.search).get(
-    //         "payment_intent_client_secret"
-    //     );
+        const clientSecret = new URLSearchParams(window.location.search).get(
+            "payment_intent_client_secret"
+        );
 
-    //     if (!clientSecret) {
-    //         return;
-    //     }
+        if (!clientSecret) {
+            return;
+        }
 
-    //     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-    //         switch (paymentIntent?.status) {
-    //             case "succeeded":
-    //                 setMessage("Payment succeeded!");
-    //                 break;
-    //             case "processing":
-    //                 setMessage("Your payment is processing.");
-    //                 break;
-    //             case "requires_payment_method":
-    //                 setMessage(
-    //                     "Your payment was not successful, please try again."
-    //                 );
-    //                 break;
-    //             default:
-    //                 setMessage("Something went wrong.");
-    //                 break;
-    //         }
-    //     });
-    //     // Add window.location.search as a dependency
-    // }, [stripe]);
+        stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+            switch (paymentIntent?.status) {
+                case "succeeded":
+                    setMessage("Payment succeeded!");
+                    break;
+                case "processing":
+                    setMessage("Your payment is processing.");
+                    break;
+                case "requires_payment_method":
+                    setMessage(
+                        "Your payment was not successful, please try again."
+                    );
+                    break;
+                default:
+                    setMessage("Something went wrong.");
+                    break;
+            }
+        });
+        // Add window.location.search as a dependency
+    }, [stripe]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
