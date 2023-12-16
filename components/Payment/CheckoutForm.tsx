@@ -87,8 +87,8 @@ export default function CheckoutForm() {
     };
 
     return (
-        <div className="">
-            <div className="mb-4">
+        <div className="flex flex-col p-2 ">
+            <div className="p-1 text-sm">
                 {IS_TEST_MODE
                     ? "Use this card to test: " + TEST_CARD_NUMBER
                     : ""}
@@ -96,7 +96,7 @@ export default function CheckoutForm() {
             <form
                 id="payment-form"
                 onSubmit={handleSubmit}
-                className="bg-white p-4 rounded-lg gap-2 flex flex-col"
+                className="bg-white p-4 rounded-lg gap-3 flex flex-col"
             >
                 <PaymentElement
                     id="payment-element"
@@ -106,7 +106,7 @@ export default function CheckoutForm() {
                     <button
                         disabled={isLoading || !stripe || !elements}
                         id="submit"
-                        className="p-2 bg-slate-200 rounded h-10 w-1/2                        "
+                        className="p-2 bg-accent font-bold rounded h-10 w-full                        "
                     >
                         <span id="button-text">
                             {isLoading ? "Processing..." : "Pay now"}
