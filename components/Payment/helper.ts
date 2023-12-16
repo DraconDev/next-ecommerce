@@ -25,10 +25,12 @@ export async function generatePaymentIntentWithCart(cartItems: CartItem[]) {
 }
 
 export function convertBasketToCart(basket: BasketItemTypes) {
-    return Object.values(basket).map((item) => {
-        return {
-            price: item.product.price,
-            quantity: item.quantity,
-        };
-    });
+    const result: CartItem[] = [];
+
+    for (let v of Array.from(basket.values())) {
+        result.push({
+            price: v.product.price,
+            quantity: v.quantity,
+        });
+    }
 }
