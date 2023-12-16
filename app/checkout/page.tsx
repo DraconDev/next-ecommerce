@@ -9,7 +9,7 @@ type Props = {};
 const Checkout = (props: Props) => {
     return (
         <MainWrapper>
-            <div className="w-2/3">
+            <div className="w-full p-1">
                 <CheckoutItems />
                 <PriceBox />
                 <PaymentBox />

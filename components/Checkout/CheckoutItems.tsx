@@ -13,21 +13,21 @@ const CheckoutItems = (props: Props) => {
     const [curProduct, setCurProduct] = useAtom(currentProduct);
 
     return (
-        <div className="w-full gap-3 flex flex-col p-2">
+        <div className="w-full gap-3 flex flex-col p-1">
             {/* Iterate over the values of the basket map */}
             {Array.from(basket.values()).map((item, index) => (
                 <div
                     key={index}
-                    className="flex justify-between text-xl w-full"
+                    className="flex justify-between text-xl w-full "
                 >
                     <Link
                         href="/product"
                         onClick={() => setCurProduct(item.product)}
-                        className="flex flex-wrap w-full  min-h-[40px] p-2 rounded-lg"
+                        className="flex flex-wrap w-full  min-h-[40px] p-2 rounded-lg "
                     >
                         <div className="">{item.product.title}</div>
                     </Link>
-                    <div className="flex justify-between gap-4 w-1/5 items-center">
+                    <div className="flex justify-between gap-4 w-[150px] items-center">
                         <div className="flex ">{`$${item.product.price}`}</div>
                         <ItemQuantity item={item} />
                     </div>
