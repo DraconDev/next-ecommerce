@@ -33,4 +33,5 @@ export function convertBasketToCart(basket: BasketItemTypes) {
             quantity: v.quantity,
         });
     }
+    return result;
 }
