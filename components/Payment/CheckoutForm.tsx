@@ -15,7 +15,7 @@ export default function CheckoutForm() {
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
     // http://localhost:3000/checkout/success"
-    const return_url = "http://localhost:3000/orders";
+    const return_url = "http://localhost:3000/orders/success";
 
     // useEffect(() => {
     //     if (!stripe) {
