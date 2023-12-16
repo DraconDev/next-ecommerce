@@ -23,11 +23,11 @@ const CheckoutItems = (props: Props) => {
                     <Link
                         href="/product"
                         onClick={() => setCurProduct(item.product)}
-                        className="flex flex-wrap w-2/3  min-h-[40px] p-2 rounded-lg"
+                        className="flex flex-wrap w-full  min-h-[40px] p-2 rounded-lg"
                     >
                         <div className="">{item.product.title}</div>
                     </Link>
-                    <div className="flex justify-between gap-4 w-1/5">
+                    <div className="flex justify-between gap-4 w-1/5 items-center">
                         <div className="flex ">{`$${item.product.price}`}</div>
                         <ItemQuantity item={item} />
                     </div>
