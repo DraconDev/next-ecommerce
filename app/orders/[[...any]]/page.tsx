@@ -16,7 +16,7 @@ const Orders = (props: Props) => {
     }, []);
 
     return (
-        <div className="flex justify-center w-full h-full items-center flex-col">
+        <div className="flex justify-center w-full h-[80vh] items-center flex-col">
             <div className="text-2xl">Order Successful</div>
             <div className="text-2xl">Redirecting to homepage...</div>
         </div>
