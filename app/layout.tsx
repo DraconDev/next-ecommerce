@@ -27,9 +27,11 @@ export default function RootLayout({
                     className={`  text-black ${quicksand.className} w-full min-h-screen   bg-gradient-to-b from-bgGrad to-quaternary  after:bg-quaternary`}
                 >
                     <QueryProvider>
-                        <Navbar />
-                        <div className="pt-[96px]"></div>
-                        {children}
+                        <div className="min-h-screen w-full">
+                            <Navbar />
+                            <div className="pt-[96px]"></div>
+                            {children}
+                        </div>
                     </QueryProvider>
                 </body>
             </AuthProvider>

@@ -91,7 +91,7 @@ export default function CheckoutForm() {
     };
 
     return (
-        <div className="flex flex-col p-2 h-[227px]">
+        <div className="flex flex-col p-2 ">
             <div className="p-1 text-sm">
                 {IS_TEST_MODE
                     ? "Use this card to test: " + TEST_CARD_NUMBER
