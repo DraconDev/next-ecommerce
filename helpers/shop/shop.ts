@@ -7,6 +7,12 @@ export const useUpdateItem = () => {
 
     // This function will be returned by the hook and can be used to update the item.
     const updateItem = (item: ProductType, amount?: number) => {
+        if (amount === 0) {
+            const updatedMap = new Map(itemsMap);
+            updatedMap.delete(item.id);
+            setItemsMap(updatedMap);
+            return;
+        }
         // Create a new Map instance with updated values
         const updatedMap = new Map(itemsMap);
 
