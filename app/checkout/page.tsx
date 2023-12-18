@@ -1,7 +1,6 @@
 import CheckoutItems from "@/components/Checkout/CheckoutItems";
 
 import PriceBox from "@/components/Checkout/PriceBox";
-import PaymentBox from "@/components/Payment/PaymentBox";
 import MainWrapper from "@/components/layout/MainWrapper";
 
 type Props = {};
@@ -12,7 +11,7 @@ const Checkout = (props: Props) => {
             <div className="w-full p-1">
                 <CheckoutItems />
                 <PriceBox />
-                <PaymentBox />
+                {/* <PaymentBox /> */}
             </div>
         </MainWrapper>
     );

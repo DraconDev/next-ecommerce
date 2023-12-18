@@ -33,7 +33,7 @@ const PaymentBox = ({ children }: { children?: React.ReactNode }) => {
     };
 
     return (
-        <div className="">
+        <div className="max-w-[500px] w-full ">
             {clientSecret && (
                 <Elements
                     options={options}
