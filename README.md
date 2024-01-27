@@ -19,9 +19,9 @@ npm i
 npm run dev
 ```
 
-### Environment
+## Environment
 
-#### Nextauth
+**Nextauth**
 
 ```
 NEXTAUTH_SECRET=
@@ -31,7 +31,7 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 ```
 
-#### Stripe
+**Stripe**
 
 ```
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
