@@ -21,16 +21,22 @@ npm run dev
 
 ### Environment
 
--Nextauth
+#### Nextauth
+
+```
 NEXTAUTH_SECRET=
 GITHUB_ID=
 GITHUB_SECRET=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+```
 
--Stripe
+#### Stripe
+
+```
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
+```
 
 ## Tech stack
 
