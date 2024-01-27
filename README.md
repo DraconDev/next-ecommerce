@@ -19,7 +19,7 @@ npm i
 npm run dev
 ```
 
-## Environment
+## Environment config
 
 **Nextauth**
 
