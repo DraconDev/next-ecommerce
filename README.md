@@ -47,3 +47,5 @@ STRIPE_SECRET_KEY=
 -   Next-auth
 -   Stripe api
 -   Jotai
+
+version 1.1
